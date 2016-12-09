@@ -1,12 +1,13 @@
 //image list component
 
 import React from 'react'
+import ImageDetail from './image_detail'
 
 
 const ImageList = () => {
     return (
         <ul>
-            <li>Image profile</li>
+            <ImageDetail />
         </ul>
     )
 }
