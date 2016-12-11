@@ -1,10 +1,11 @@
 import React from 'react'
 
 
-const ImageDetail = () => {
+const ImageDetail = (props) => {
 return (
     <div>
-    Image Detail
+        <h1>{props.image.name}</h1>
+        <img src={props.image.url}/>
     </div>
 )
 
