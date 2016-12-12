@@ -3,25 +3,15 @@
 import React from 'react'
 import ImageDetail from './image_detail'
 
-const DATA = [
-    {name: "first",
-     url: "http://placekitten.com/200/400"
-    },
-        
-    {name: "second",
-     url: "http://placekitten.com/200/400"
-    },
-        {name: "third",
-     url: "http://placekitten.com/200/400"
-    }
 
-]
+const ImageList = (props) => {
+    const ValidImages = props.images.filter(image => !image.is_album)
 
 
-const ImageList = () => {
-    const RenderedImages = DATA.map(image =>{
-        return <ImageDetail image={image} key={image.name}/>
-    })
+    const RenderedImages = ValidImages.map(image => 
+        <ImageDetail image={image} key={image.id} />
+    )
+
 
     return (
         <ul className="media-list list-group">

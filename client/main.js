@@ -22,14 +22,14 @@ class App extends Component {
     componentWillMount(){
         axios
             .get("https://api.imgur.com/3/gallery/hot/viral/0")
-            .then(res => console.log(res))
+            .then(res => this.setState({images: res.data.data}))
     }
     
     render() {
             return (
             <div>
                 <h1>Image List</h1>
-                <ImageList />
+                <ImageList images={this.state.images} />
             </div>
         )
     }
